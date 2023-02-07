@@ -9,14 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "11.8.1",
     "@next/font": "13.1.6",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "@emotion/react": "^11.8.2",
-    "@emotion/styled": "11.8.1",
     "tailwindcss-filters": "3.0.0"
   },
   "devDependencies": {
@@ -24,6 +24,8 @@
     "@emotion/babel-plugin": "11.7.2",
     "autoprefixer": "^10.4.4",
     "postcss": "^8.4.12",
+    "prettier": "^2.8.3",
+    "prettier-plugin-tailwindcss": "^0.2.2",
     "tailwindcss": "2.1.4",
     "xwind": "0.8.0"
   }
