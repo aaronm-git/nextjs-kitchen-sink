@@ -16,6 +16,8 @@ const NavItem = tw.li`
 py-4
 px-3
 capitalize
+last:pr-0
+first:pl-0
 `;
 
 export default function Navbar({ links }) {
