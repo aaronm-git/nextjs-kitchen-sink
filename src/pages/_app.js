@@ -1,15 +1,12 @@
-import { Global } from "@emotion/react";
-import xw from "xwind";
-import Layout from "@/components/Layout";
+import { Global, css } from '@emotion/react';
+import Layout from '@/components/Layout';
+import tailwindDirectives from '/node_modules/tailwindcss/tailwind.css';
 
 export default function App({ Component, pageProps }) {
-  return (
-    <Layout>
-      <Global
-        //tailwind base styles + keyframes + ring and shadow classes variables  ... to global styles
-        styles={xw`XWIND_BASE XWIND_GLOBAL`}
-      />
-      <Component {...pageProps} />
-    </Layout>
-  );
+	return (
+		<Layout>
+			<Global styles={tailwindDirectives} />
+			<Component {...pageProps} />
+		</Layout>
+	);
 }
