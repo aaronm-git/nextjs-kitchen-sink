@@ -1,20 +1,27 @@
 import tw from 'twin.macro';
 
-const Header = tw.div`
-px-6
-py-4
-bg-blueGray-800
+// components
+import Container from '@/components/Container';
+import Navbar from '@/components/Navbar';
+
+const HeaderDiv = tw.div`
+bg-slate-800
 text-white
-text-2xl
-font-bold
-uppercase
-shadow
+shadow-sm
 `;
 
-export default function BodyHeader() {
+export default function Header() {
 	return (
-		<Header>
-			<h1>Body Header</h1>
-		</Header>
+		<HeaderDiv>
+			<Container>
+				<Navbar
+					links={{
+						home: '/',
+						about: '/about',
+						contact: '/contact',
+					}}
+				/>
+			</Container>
+		</HeaderDiv>
 	);
 }

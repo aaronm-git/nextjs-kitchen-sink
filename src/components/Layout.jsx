@@ -1,10 +1,10 @@
-import Head from "@/components/Head";
+import Head from '@/components/Head';
 
 export default function Layout({ children }) {
-  return (
-    <>
-      <Head />
-      <main>{children}</main>
-    </>
-  );
+	return (
+		<>
+			<Head />
+			<main>{children}</main>
+		</>
+	);
 }
