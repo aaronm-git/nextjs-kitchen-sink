@@ -12,40 +12,35 @@ justify-center
 ml-auto
 `;
 
-const NavItem = (props) => {
-	return (
-		<li
-			css={[
-				tw`px-3 py-4 transition ease-in-out duration-150`,
-				css`
-					& > a {
-						${tw` text-gray-300 transition ease-in-out duration-150`}
-					}
+const NavItem = tw.li`
+transition
+ease-in-out
+duration-150
+hover:(bg-slate-700)
+`;
 
-					&:hover {
-						${tw`cursor-pointer bg-slate-700`}
-						& > a {
-							${tw`text-white`}
-						}
-					}
-				`,
-			]}
-			{...props}
-		>
-			{props.children}
-		</li>
-	);
-};
+const NavLink = tw(Link)`
+block
+px-3
+py-4
+text-gray-300
+transition
+ease-in-out
+duration-150
+`;
 
 export default function Navbar({ links }) {
 	return (
 		<Nav>
 			<NavItems>
-				{Object.keys(links).map((link, index) => (
-					<NavItem key={index}>
-						<Link href={link}>{Object.keys(links)[index]}</Link>
-					</NavItem>
-				))}
+				{Object.keys(links).map((linkName, index) => {
+					const url = links[linkName];
+					return (
+						<NavItem key={index}>
+							<NavLink href={url}>{linkName}</NavLink>
+						</NavItem>
+					);
+				})}
 			</NavItems>
 		</Nav>
 	);

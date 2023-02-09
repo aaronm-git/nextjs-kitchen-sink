@@ -7,18 +7,20 @@ import Navbar from '@/components/Navbar';
 // constants
 import navigationLinks from '@/constants/navigationLinks';
 
-const HeaderDiv = tw.div`
+const BodyHeader = tw.div`
 bg-slate-800
 text-white
-shadow-sm
+shadow-lg
+border-b
+border-slate-700
 `;
 
 export default function Header() {
 	return (
-		<HeaderDiv>
+		<BodyHeader>
 			<Container>
 				<Navbar links={navigationLinks} />
 			</Container>
-		</HeaderDiv>
+		</BodyHeader>
 	);
 }
