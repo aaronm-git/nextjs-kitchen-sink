@@ -8,17 +8,12 @@ text-white
 min-h-screen
 `;
 
-const Main = tw(Container)`
-text-white
-bg-orange-500
-`;
-
 export default function Layout({ children }) {
 	return (
 		<>
 			<Head />
-			<Wrapper css={tw`bg-slate-800 text-white`}>
-				<Main>{children}</Main>
+			<Wrapper>
+				<Container as="main">{children}</Container>
 			</Wrapper>
 		</>
 	);
