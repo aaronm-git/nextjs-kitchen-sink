@@ -12,13 +12,30 @@ justify-center
 ml-auto
 `;
 
-const NavItem = tw.li`
-py-4
-px-3
-capitalize
-last:pr-0
-first:pl-0
-`;
+const NavItem = (props) => {
+	return (
+		<li
+			css={[
+				tw`px-3 py-4 transition ease-in-out duration-150`,
+				css`
+					& > a {
+						${tw` text-gray-300 transition ease-in-out duration-150`}
+					}
+
+					&:hover {
+						${tw`cursor-pointer bg-slate-700`}
+						& > a {
+							${tw`text-white`}
+						}
+					}
+				`,
+			]}
+			{...props}
+		>
+			{props.children}
+		</li>
+	);
+};
 
 export default function Navbar({ links }) {
 	return (
