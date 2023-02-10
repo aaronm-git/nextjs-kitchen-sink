@@ -78,6 +78,7 @@ const HamburgerMenu = () => {
 			<label
 				htmlFor="hamburger-menu"
 				tw="
+				md:hidden
 				p-4
 				text-gray-300
 				transition 
