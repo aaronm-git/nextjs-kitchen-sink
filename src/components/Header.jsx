@@ -18,9 +18,7 @@ border-slate-700
 export default function Header() {
 	return (
 		<BodyHeader>
-			<Container>
-				<Navbar links={navigationLinks} />
-			</Container>
+			<Navbar links={navigationLinks} />
 		</BodyHeader>
 	);
 }
