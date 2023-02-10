@@ -34,6 +34,7 @@ mx-auto
 
 const NavItems = tw.ul`
 hidden
+md:(flex static justify-end ml-auto border-y-0)!
 peer-checked:(block)
 absolute 
 top-14 
@@ -43,7 +44,6 @@ shadow-sm
 bg-slate-800 
 border-y 
 border-y-slate-600
-md:(static flex justify-end ml-auto border-y-0)
 `;
 
 const NavItem = tw.li`

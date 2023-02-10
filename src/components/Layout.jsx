@@ -3,7 +3,7 @@ import Container from '@/components/Container';
 import Header from '@/components/Header';
 
 const Wrapper = tw.div`
-bg-slate-800
+bg-slate-700
 text-white
 min-h-screen
 `;
