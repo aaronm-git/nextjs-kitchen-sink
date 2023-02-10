@@ -9,7 +9,12 @@ export default function Navbar({ links }) {
 				{Object.keys(links).map((linkName, index) => {
 					const url = links[linkName];
 					return (
-						<NavItem key={index}>
+						<NavItem
+							key={index}
+							onClick={() => {
+								document.getElementById('hamburger-menu').checked = false;
+							}}
+						>
 							<NavLink href={url}>{linkName}</NavLink>
 						</NavItem>
 					);
@@ -27,31 +32,26 @@ md:container
 mx-auto
 `;
 
-const NavItems = styled.ul((_) => [
-	tw`
-	hidden
-	peer-checked:(block)
-	select-none
-	absolute 
-	top-14 
-	left-0 
-	w-full 
-	shadow-sm 
-	bg-slate-800 
-	border-y 
-	border-y-slate-600
-	md:(static flex justify-end ml-auto border-y-0)
-	`,
-]);
+const NavItems = tw.ul`
+hidden
+peer-checked:(block)
+absolute 
+top-14 
+left-0 
+w-full 
+shadow-sm 
+bg-slate-800 
+border-y 
+border-y-slate-600
+md:(static flex justify-end ml-auto border-y-0)
+`;
 
-const NavItem = styled.li((_) => [
-	tw`
-	transition
-	ease-in-out
-	duration-150
-	hover:(bg-slate-700)
-	`,
-]);
+const NavItem = tw.li`
+transition
+ease-in-out
+duration-150
+hover:(bg-slate-700)
+`;
 
 const NavLink = tw(Link)`
 block
@@ -67,17 +67,11 @@ hover:(text-white)
 const HamburgerMenu = () => {
 	return (
 		<>
-			<input
-				id="hamburger-menu"
-				type="checkbox"
-				tw="
-				hidden
-				"
-				className="peer"
-			/>
+			<input id="hamburger-menu" type="checkbox" tw="hidden" className="peer" />
 			<label
 				htmlFor="hamburger-menu"
 				tw="
+				select-none
 				md:hidden
 				p-4
 				text-gray-300
