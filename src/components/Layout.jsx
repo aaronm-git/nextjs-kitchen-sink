@@ -1,6 +1,6 @@
-import Head from '@/components/Head';
 import tw from 'twin.macro';
 import Container from '@/components/Container';
+import Header from '@/components/Header';
 
 const Wrapper = tw.div`
 bg-slate-800
@@ -10,11 +10,9 @@ min-h-screen
 
 export default function Layout({ children }) {
 	return (
-		<>
-			<Head />
-			<Wrapper>
-				<Container as="main">{children}</Container>
-			</Wrapper>
-		</>
+		<Wrapper>
+			<Header />
+			<Container as="main">{children}</Container>
+		</Wrapper>
 	);
 }

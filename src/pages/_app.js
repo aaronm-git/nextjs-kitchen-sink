@@ -1,12 +1,13 @@
-import { Global, css } from '@emotion/react';
+import { GlobalStyles } from 'twin.macro';
 import Layout from '@/components/Layout';
-import tailwindDirectives from '/node_modules/tailwindcss/tailwind.css';
 
 export default function App({ Component, pageProps }) {
 	return (
-		<Layout>
-			<Global styles={tailwindDirectives} />
-			<Component {...pageProps} />
-		</Layout>
+		<>
+			<GlobalStyles />
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
+		</>
 	);
 }
